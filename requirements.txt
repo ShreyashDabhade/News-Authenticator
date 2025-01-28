@@ -1,0 +1,7 @@
+flask==3.0.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+crewai==0.16.0
+GoogleNews==1.6.12
+crewai-tools==0.0.10
+pydantic==2.6.1
