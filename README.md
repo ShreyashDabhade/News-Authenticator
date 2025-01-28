@@ -31,7 +31,7 @@
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/news-authenticator.git
+https://github.com/ShreyashDabhade/News-Authenticator.git
 cd news-authenticator
 ```
 
