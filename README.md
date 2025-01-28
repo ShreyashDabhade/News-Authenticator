@@ -6,7 +6,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/news-authenticator/graphs/commit-activity)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/news-authenticator/main/static/logo.png" alt="News Authenticator Logo" width="200"/>
+  <img src="static/logo.png" alt="News Authenticator Logo" width="200"/>
   
   🔍 *Verify news authenticity with the power of AI*
 </div>
