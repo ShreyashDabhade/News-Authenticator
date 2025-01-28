@@ -43,7 +43,8 @@ python -m venv .venv
 
 3. Install dependencies
 ```bash
-pip install -r requirements.txt
+ pip install flask beautifulsoup4 requests crewai GoogleNews crewai-tools pydantic
+
 ```
 
 4. Set up environment variables
@@ -51,6 +52,8 @@ pip install -r requirements.txt
 set GEMINI_API_KEY=your_gemini_api_key
 set SERPER_API_KEY=your_serper_api_key
 ```
+also make sure you have [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed
+
 
 5. Run the application
 ```bash
