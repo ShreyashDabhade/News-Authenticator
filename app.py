@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from crewai import Crew, Process, Task, Agent, LLM, BaseTool
+from crewai import Crew, Process, Task, Agent, LLM
 from crewai_tools import SerperDevTool
 from GoogleNews import GoogleNews
 from pydantic import BaseModel, Field
