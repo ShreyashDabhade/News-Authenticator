@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #c2e1ec;
+    color: #1a1a1a;
+}
+
+img {
+    height: 125px;
+    width: 125px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+.result-content {
+    white-space: pre-wrap;
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+.result-header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px 8px 0 0;
+    margin: -100px -26px 20px -26px;
+    font-weight: 500;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 24px;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+.back-button:hover {
+    background-color: #1557b0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.9em;
+}
+.highlight {
+    background-color: #e8f0fe;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+.result-section {
+    margin-bottom: 20px;
+}
+.source-link {
+    color: #1a73e8;
+    text-decoration: none;
+    border-bottom: 1px solid #1a73e8;
+}
+.source-link:hover {
+    color: #1557b0;
+    border-bottom-color: #1557b0;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .result-content {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
