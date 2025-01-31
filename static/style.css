@@ -1,23 +1,32 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #c2e1ec;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
+img {
+    height: 125px;
+    width: 125px;
+}
+
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
+    background: rgb(255, 255, 255);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h1 {
+    color: #1a73e8;
     text-align: center;
-    color: #555;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 textarea {
