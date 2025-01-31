@@ -2,30 +2,29 @@ from flask import Flask, render_template, request
 from crewai import Crew, Process, Task, Agent, LLM
 from crewai_tools import SerperDevTool
 from GoogleNews import GoogleNews
-from pydantic import BaseModel, Field
+from crewai.tools import tool
+from GoogleNews import GoogleNews
 import os
 
 app = Flask(__name__)
 
 # Setup for AI tools
-os.environ['GEMINI_API_KEY'] = ""  # Replace with your actual Gemini API key
-os.environ['SERPER_API_KEY'] = ""  # Replace with your actual Serper API key
+os.environ['GEMINI_API_KEY'] = ""  # Enter your actual Gemini API key
+os.environ['SERPER_API_KEY'] = ""  # Enter your actual Serper API key
 
 llm = LLM(model="gemini/gemini-1.5-flash")
 
 # Initialize Serper tool
 serper_tool = SerperDevTool()
 
-from crewai.tools import tool
-from GoogleNews import GoogleNews
-
+# Creating Googlenewsapi tool
 @tool("GoogleNewsAPI")
 def googlenews_tool(question: str, num_results: int = 10) -> str:
     """Searches Google News articles for the given query and returns the relevant results."""
 
     try:
         # Initialize GoogleNews
-        googlenews = GoogleNews(lang='en', region='US')
+        googlenews = GoogleNews(lang='en', region='global')
         googlenews.search(question)
         results = googlenews.result()[:num_results]
 
@@ -119,7 +118,7 @@ news_presenter = Agent(
   allow_delegation=False,
 )
 
-## creating tasks
+# Creating tasks
 
 ## Researcher Task
 news_researcher_task = Task(
@@ -159,11 +158,14 @@ news_presentation_task = Task(
      description=(
         "Based on the output from the Verification Agent, present the final news verdict in a consistent, "
         "user-friendly format. Highlight the verdict prominently and include structured sections for reasoning "
-        "and references. Ensure references are clickable and the entire presentation maintains clarity and readability."
+        "and references. Ensure references are clickable and the entire presentation maintains clarity and readability." 
+        "Present the references in an anchor tag so that user can directly click on it and go to the reference site." 
+        "One precaution you have to take while creating anchor tag of the site is that the links should be only till .html remove the &ved= and the contain after it."
+        "FINAL VERDICT should be <h1> heading tag and the Verdict should be <h3> heading tag"
     ),
     expected_output=(
-            "## FINAL VERDICT "
-            "\n🎯 **Verdict**: **\n"
+            " FINAL VERDICT "
+            "\n🎯 Verdict: \n"
             "==================== REASONING ===================="
             "\n'reasoning'\n"
             "==================== REFERENCES ===================="
