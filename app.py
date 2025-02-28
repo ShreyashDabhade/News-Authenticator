@@ -9,8 +9,8 @@ import os
 app = Flask(__name__)
 
 # Setup for AI tools
-os.environ['GEMINI_API_KEY'] = ""  # Enter your actual Gemini API key
-os.environ['SERPER_API_KEY'] = ""  # Enter your actual Serper API key
+os.environ['GEMINI_API_KEY'] = "AIzaSyCgi3Riy83jAc8sLgiQuKwx_2tLdX39uIE"  # Enter your actual Gemini API key
+os.environ['SERPER_API_KEY'] = "79fccfb003963fb3345cba77d4158201226ca78f"  # Enter your actual Serper API key
 
 llm = LLM(model="gemini/gemini-1.5-flash")
 
@@ -125,11 +125,13 @@ news_researcher_task = Task(
      description=(
         "Gather relevant and credible news articles related to the {input} news "
         "by prioritizing the use of the Serper tool to scrape the web. Focus on retrieving data from this tool first and use it thoroughly to find the latest data to stay updated. "
-        "Also, use the Google News tool to search for similar news articles, if found you can know that there exists such news and then try using serper_tool to search that exact news article. "
-        "dont feed the {input} news as it is, Try using more general keywords related to the event to broaden the search terms."
+        "Also, use the Google News tool to search for similar news articles; if found, confirm their existence and then use serper_tool to search for that exact news article. "
+        "Do not simply feed the {input} news as it is; instead, use more general keywords related to the event to broaden the search terms. "
         "Articles should come from trustworthy sources that provide additional context or details similar to the {input} news. Summarize the key points and provide a clear list "
-        "of sources and links for each article found. The goal is to present factual, "
-        "unbiased data that can be cross-verified by the verification agent."
+        "of sources and links for each article found. The goal is to present factual, unbiased data that can be cross-verified by the verification agent. "
+        "\n\nAdditional Instructions: In every response, ensure that the analysis remains strictly unbiased, presenting all viewpoints fairly. "
+        "Include relevant background context (e.g., historical background, related events, key statistics, or trends) to help the user fully understand the topic. "
+        "Clearly cite all sources and note any uncertainties or areas needing further verification."
     ),
     expected_output = 'A structured summary of relevant news articles with source links and brief descriptions.',
     tools=[serper_tool, googlenews_tool],
@@ -148,6 +150,9 @@ news_verification_task = Task(
         "to assess whether the news is genuine or fake. Provide a clear verdict based "
         "exclusively on this data, with reasoning and references."
         "Do not add any of your biased verdict, only use the data provided by news_researcher to come to final verdict."
+        "\n\nAdditional Instructions: Ensure that your analysis remains strictly unbiased and includes any relevant contextual"
+        "background that may help the user understand the broader implications of the news. "
+        "Clearly cite all sources and indicate any uncertainties or areas requiring further verification."
     ),
     expected_output = 'A detailed verdict report on the authenticity of the news, with supporting references.',
     agent = news_verifier
@@ -162,14 +167,17 @@ news_presentation_task = Task(
         "Present the references in an anchor tag so that user can directly click on it and go to the reference site." 
         "One precaution you have to take while creating anchor tag of the site is that the links should be only till .html remove the &ved= and the contain after it."
         "FINAL VERDICT should be <h1> heading tag and the Verdict should be <h3> heading tag"
+        "\n\nAdditional Instructions: Present the information in an unbiased manner, incorporating additional context and background details"
+        "(such as historical context, related events, or key statistics) to help the user gain a comprehensive understanding of the topic. "
+        "Clearly cite all sources and note any uncertainties."
     ),
     expected_output=(
-            " FINAL VERDICT "
-            "\n🎯 Verdict: \n"
+            " FINAL VERDICT \n"
+            "🎯 Verdict: \n"
             "==================== REASONING ===================="
-            "\n'reasoning'\n"
+            "'reasoning'\n"
             "==================== REFERENCES ===================="
-            "\n'references'\n"
+            "'references'\n"
             "==================================================="
         "Ensure all references are accurate and clickable, and do not introduce new content or analysis."
     ),
