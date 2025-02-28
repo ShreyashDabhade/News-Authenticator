@@ -48,14 +48,7 @@ python -m venv .venv
 ```
 also make sure you have [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed
 
-
-4. Set up environment variables
-```bash
-set GEMINI_API_KEY=your_gemini_api_key
-set SERPER_API_KEY=your_serper_api_key
-```
-
-5. Run the application
+4. Run the application
 ```bash
 python app.py
 ```
