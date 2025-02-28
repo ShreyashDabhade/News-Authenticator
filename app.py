@@ -9,8 +9,8 @@ import os
 app = Flask(__name__)
 
 # Setup for AI tools
-os.environ['GEMINI_API_KEY'] = "AIzaSyCgi3Riy83jAc8sLgiQuKwx_2tLdX39uIE"  # Enter your actual Gemini API key
-os.environ['SERPER_API_KEY'] = "79fccfb003963fb3345cba77d4158201226ca78f"  # Enter your actual Serper API key
+os.environ['GEMINI_API_KEY'] = ""  # Enter your actual Gemini API key
+os.environ['SERPER_API_KEY'] = ""  # Enter your actual Serper API key
 
 llm = LLM(model="gemini/gemini-1.5-flash")
 
