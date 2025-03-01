@@ -4,11 +4,50 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    padding-top: 25px;
+}
+section, h1, h2, h3 {
+    scroll-margin-top: 75px;
+}
+
+.navbar {
+    background-color: #007BFF;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
 }
 
 img {
     height: 125px;
     width: 125px;
+}
+
+section #verify {
+    margin-top: 100px ;
 }
 
 .container {
@@ -20,6 +59,38 @@ img {
     border-radius: 8px;
 }
 
+.container h1, h2 {
+    color: #1a73e8;
+}
+
+.team-member {
+    background: #fff; 
+    padding: 15px; 
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.team-member strong {
+    display: inline-block; 
+    width: 90px;
+}
+
+ol {
+    line-height: 1.8;
+    margin-left: 20px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  .note {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+
 h1 {
     color: #1a73e8;
     text-align: center;
@@ -30,7 +101,7 @@ h1 {
 }
 
 textarea {
-    width: 100%;
+    width: 97.5%;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
