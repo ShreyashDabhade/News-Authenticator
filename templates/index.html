@@ -6,8 +6,16 @@
     <title>News Authenticator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#verify">Verify</a></li>
+            <li><a href="#how-to-use">How to Use</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+    <section id="verify" class="container">
         <center><img src="/static/logo.png"></center>
         <h1>News Authenticator</h1>
         <form action="/verify" method="POST">
@@ -17,6 +25,71 @@
         {% if error %}
         <p class="error">{{ error }}</p>
         {% endif %}
-    </div>
+    </section>
+
+    <section id="how-to-use" class="container">
+        <h2>How to Use</h2>
+        <ol>
+            <li>
+              <strong>Enter News:</strong> On the homepage, you’ll find a text box where you can paste or type the news article or statement you wish to verify.
+            </li>
+            <li>
+              <strong>Submit Your News:</strong> Click the <em>Verify</em> button to send your input for processing.
+            </li>
+            <li>
+              <strong>Processing:</strong> The system will fetch related news from multiple sources using the Google News API and Serper tool, then use AI agents to analyze and cross-reference the information.
+            </li>
+            <li>
+              <strong>View Verification Results:</strong> Once processing is complete, you’ll see a detailed report. This includes a final verdict, reasoning behind the analysis, and clickable source links for further verification.
+            </li>
+            <li>
+              <strong>Review Additional Context:</strong> The results also provide background information—such as historical context, key statistics, and related events—to help you understand the authenticity of the news.
+            </li>
+            <li>
+              <strong>Try Another Verification:</strong> If you want to verify a different news piece, simply return to the homepage and repeat the process.
+            </li>
+          </ol>
+          <div class="note">
+            <p><strong>Note:</strong> Ensure that you enter a valid news article or statement before clicking verify. If you encounter any errors, double-check your input and try again.</p>
+          </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>Welcome to our project website! We are of students from Vishwakarma Institute of Technology College, committed to delivering innovative solutions through collaborative teamwork and state-of-the-art technology.</p>
+        
+        <h3>Our Team</h3>
+        <div class="team-member">
+        <p><strong>Name:</strong> Shreyash Dabhade</p>
+        <p><strong>College:</strong> Vishwakarma Institute of Technology</p>
+        <p><strong>Branch:</strong> Information Technology</p>
+        </div>
+
+        <div class="team-member">
+        <p><strong>Name:</strong> Swanand Kalekar</p>
+        <p><strong>College:</strong> Vishwakarma Institute of Technology</p>
+        <p><strong>Branch:</strong> Information Technology</p>
+        </div>
+
+        <div class="team-member">
+        <p><strong>Name:</strong> Nikunj Bhutada</p>
+        <p><strong>College:</strong> Vishwakarma Institute of Technology</p>
+        <p><strong>Branch:</strong> Information Technology</p>
+        </div>
+
+        <div class="team-member">
+        <p><strong>Name:</strong> Vedant Chaudhari</p>
+        <p><strong>College:</strong> Vishwakarma Institute of Technology</p>
+        <p><strong>Branch:</strong> Information Technology</p>
+        </div>
+
+        <div class="team-member">
+        <p><strong>Name:</strong> Shubham Badadale</p>
+        <p><strong>College:</strong> Vishwakarma Institute of Technology</p>
+        <p><strong>Branch:</strong> Information Technology</p>
+        </div>
+    </section>
+
+    
 </body>
 </html>
