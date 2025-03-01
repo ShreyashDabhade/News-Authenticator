@@ -162,7 +162,7 @@ news_verification_task = Task(
 news_presentation_task = Task(
      description=(
         "Based on the output from the Verification Agent, present the final news verdict in a consistent, "
-        "user-friendly format. Highlight the verdict prominently and include structured sections for reasoning "
+        "user-friendly format. Highlight the verdict prominently keep the verdict short and crisp and include structured sections for reasoning "
         "and references. Ensure references are clickable and the entire presentation maintains clarity and readability." 
         "Present the references in an anchor tag so that user can directly click on it and go to the reference site." 
         "One precaution you have to take while creating anchor tag of the site is that the links should be only till .html remove the &ved= and the contain after it."
@@ -172,12 +172,12 @@ news_presentation_task = Task(
         "Clearly cite all sources and note any uncertainties."
     ),
     expected_output=(
-            " FINAL VERDICT \n"
-            "🎯 Verdict: \n"
+            " FINAL VERDICT "
+            "\n Verdict: \n"
             "==================== REASONING ===================="
-            "'reasoning'\n"
+            "\n'reasoning'\n"
             "==================== REFERENCES ===================="
-            "'references'\n"
+            "\n'references'\n"
             "==================================================="
         "Ensure all references are accurate and clickable, and do not introduce new content or analysis."
     ),
