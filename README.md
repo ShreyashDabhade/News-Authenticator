@@ -92,6 +92,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 <div align="center">
   Made with ❤️ for truth in journalism
-  
-  [Report Bug](https://github.com/yourusername/news-authenticator/issues) · [Request Feature](https://github.com/yourusername/news-authenticator/issues)
 </div>
